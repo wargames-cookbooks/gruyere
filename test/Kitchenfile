@@ -1,0 +1,5 @@
+# -*- ruby -*-
+cookbook "gruyere" do
+  configuration "default"
+  configuration "apache2_proxy"
+end
