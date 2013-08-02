@@ -40,6 +40,9 @@ Just include `gruyere` in your node's `run_list`:
 ```
 
 This will setup gruyere that accepts connections from localhost only.
+
+#### gruyere::apache2_proxy
+
 If you want access gruyere from another host, prefer using `apache2_proxy` recipe:
 
 ```json
