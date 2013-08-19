@@ -57,7 +57,10 @@ If you want access gruyere from another host, prefer using `apache2_proxy` recip
 #### Running tests
 
 - First, install dependencies:  
-`bundle install`  
+`bundle install`
+
+- Install cookbook dependencies
+`berks install`  
 
 - Run Strainer tests:  
 `bundle exec strainer test`  
