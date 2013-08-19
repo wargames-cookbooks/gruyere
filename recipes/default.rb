@@ -21,7 +21,7 @@
 gruyere_dl_url = "http://google-gruyere.appspot.com/gruyere-code.zip"
 gruyere_local = Chef::Config[:file_cache_path] + "/gruyere.zip"
 
-# Install the unzip pkage
+# Install the unzip package
 package "unzip" do
     action :install
 end
