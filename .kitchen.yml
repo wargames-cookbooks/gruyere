@@ -17,10 +17,6 @@ suites:
 - name: "default"
   run_list:
   - recipe[gruyere]
-  - recipe[minitest-handler]
-  - recipe[gruyere_test]
 - name: "a2proxy"
   run_list:
   - recipe[gruyere::apache2_proxy]
-  - recipe[minitest-handler]
-  - recipe[gruyere_test::apache2_proxy]
