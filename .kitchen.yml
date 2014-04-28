@@ -16,7 +16,7 @@ platforms:
 suites:
 - name: "default"
   run_list:
-  - recipe[gruyere]
+    - recipe[gruyere]
 - name: "a2proxy"
   run_list:
-  - recipe[gruyere::apache2_proxy]
+    - recipe[gruyere::apache2_proxy]
