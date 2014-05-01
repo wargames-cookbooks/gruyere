@@ -16,3 +16,7 @@ This file is used to list changes made in each version of gruyere.
 * Fixed gruyere service
   - Create pidfile when start service
   - Use pidfile for status command
+
+## 0.1.3:
+
+* Changed license for Apache 2.0
