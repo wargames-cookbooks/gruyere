@@ -1,6 +1,7 @@
 Gruyere Cookbook
 =============
-Deploy a Google Gruyere environment. [![Build Status](https://secure.travis-ci.org/wargames-cookbooks/gruyere.png)](http://travis-ci.org/wargames-cookbooks/gruyere)
+Deploy a Google Gruyere environment.
+[![Cookbook Version](https://img.shields.io/cookbook/v/gruyere.svg)](https://community.opscode.com/cookbooks/gruyere) [![Build Status](https://secure.travis-ci.org/wargames-cookbooks/gruyere.png)](http://travis-ci.org/wargames-cookbooks/gruyere)
 
 
 Requirements
