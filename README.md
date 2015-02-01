@@ -12,7 +12,6 @@ Requirements
 - `Ubuntu 12.04`
 
 #### Cookbooks
-- `apt` - https://github.com/opscode-cookbooks/apt.git
 - `apache2` - https://github.com/opscode-cookbooks/apache2.git
 
 Attributes
@@ -60,11 +59,11 @@ If you want access gruyere from another host, prefer using `apache2_proxy` recip
 - First, install dependencies:  
 `bundle install`
 
-- Install cookbook dependencies
-`berks install`  
+- Run Checkstyle and ChefSpec:  
+`bundle exec rake`
 
-- Run Strainer tests:  
-`bundle exec strainer test`  
+- Run Kitchen tests:  
+`bundle exec rake kitchen`  
 
 Contributing
 ------------

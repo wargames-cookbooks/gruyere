@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- coding: utf-8 -*-
 #
 # Cookbook Name:: gruyere
 # Recipe:: apache2_proxy
@@ -16,18 +16,30 @@
 # limitations under the License.
 #
 
-require "spec_helper"
+require 'serverspec'
 
-describe file("/opt/gruyere") do
-  it { should be_directory}
+include SpecInfra::Helper::Exec
+include SpecInfra::Helper::DetectOS
+
+describe file('/opt/gruyere') do
+  it { should be_directory }
+  it { should be_owned_by 'root' }
+  it { should be_grouped_into 'root' }
+  it { should be_mode 755 }
 end
 
-describe file("/etc/init.d/gruyere") do
-  it { should be_file}
+describe file('/etc/init.d/gruyere') do
+  it { should be_file }
+  it { should be_owned_by 'root' }
+  it { should be_grouped_into 'root' }
+  it { should be_mode 755 }
 end
 
-describe file("/opt/gruyere/gruyere.py") do
-  it { should be_file}
+describe file('/opt/gruyere/gruyere.py') do
+  it { should be_file }
+  it { should be_owned_by 'root' }
+  it { should be_grouped_into 'root' }
+  it { should be_mode 644 }
 end
 
 describe service('apache2') do

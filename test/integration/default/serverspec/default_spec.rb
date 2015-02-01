@@ -1,4 +1,5 @@
-# encoding: utf-8
+
+# -*- coding: utf-8 -*-
 #
 # Cookbook Name:: gruyere
 # Recipe:: default
@@ -16,15 +17,26 @@
 # limitations under the License.
 #
 
-require "spec_helper"
+require 'serverspec'
 
-describe file("/etc/init.d/gruyere") do
-  it { should be_file}
+include SpecInfra::Helper::Exec
+include SpecInfra::Helper::DetectOS
+
+describe file('/etc/init.d/gruyere') do
+  it { should be_file }
+  it { should be_owned_by 'root' }
+  it { should be_grouped_into 'root' }
+  it { should be_mode 755 }
 end
 
-describe file("/opt/gruyere/gruyere.py") do
-  it { should be_file}
+describe file('/opt/gruyere/gruyere.py') do
+  it { should be_file }
+  it { should be_owned_by 'root' }
+  it { should be_grouped_into 'root' }
+  it { should be_mode 644 }
 end
+
+# TODO: apache2 vhosts does exists
 
 describe service('gruyere') do
   it { should be_enabled }

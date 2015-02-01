@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- coding: utf-8 -*-
 #
 # Cookbook Name:: gruyere
 # Recipe:: apache2_proxy
@@ -16,21 +16,17 @@
 # limitations under the License.
 #
 
-if platform_family?("debian")
-  include_recipe "apt"
-end
+include_recipe 'gruyere::default'
+include_recipe 'apache2'
+include_recipe 'apache2::mod_proxy_http'
 
-include_recipe "gruyere::default"
-include_recipe "apache2"
-include_recipe "apache2::mod_proxy_http"
-
-apache_site "default" do
+apache_site 'default' do
   enable false
 end
 
-web_app "gruyere" do
-  cookbook "gruyere"
+web_app 'gruyere' do
+  cookbook 'gruyere'
   enable true
-  server_name node["gruyere"]["apache2"]["server_name"]
-  server_aliases node["gruyere"]["apache2"]["server_aliases"]
+  server_name node['gruyere']['apache2']['server_name']
+  server_aliases node['gruyere']['apache2']['server_aliases']
 end

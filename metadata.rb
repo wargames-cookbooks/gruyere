@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- coding: utf-8 -*-
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,13 +13,17 @@
 # limitations under the License.
 #
 
-name             'gruyere'
-maintainer       'Sliim'
+name 'gruyere'
+maintainer 'Sliim'
 maintainer_email 'sliim@mailoo.org'
-license          'Apache 2.0'
-description      'Installs/Configures Gruyere application'
+license 'Apache 2.0'
+description 'Installs/Configures Gruyere application'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.1.3'
+version '0.1.3'
+
+recipe 'default', 'Installs/configures gruyere'
+recipe 'apache2_proxy', 'Setup apache2 proxy vhost'
 
 depends 'apache2'
-depends 'apt'
+
+supports 'ubuntu'

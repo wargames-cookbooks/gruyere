@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- coding: utf-8 -*-
 #
 # Cookbook Name:: gruyere
 # Attributes:: default
@@ -16,4 +16,4 @@
 # limitations under the License.
 #
 
-default["gruyere"]["path"] = "/opt/gruyere"
+default['gruyere']['path'] = '/opt/gruyere'

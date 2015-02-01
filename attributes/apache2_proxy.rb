@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- coding: utf-8 -*-
 #
 # Cookbook Name:: gruyere
 # Attributes:: apache2_proxy
@@ -16,5 +16,5 @@
 # limitations under the License.
 #
 
-default["gruyere"]["apache2"]["server_name"]    = "gruyere"
-default["gruyere"]["apache2"]["server_aliases"] = [ "gruyere" ]
+default['gruyere']['apache2']['server_name']    = 'gruyere'
+default['gruyere']['apache2']['server_aliases'] = ['gruyere']
