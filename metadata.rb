@@ -27,3 +27,4 @@ recipe 'apache2_proxy', 'Setup apache2 proxy vhost'
 depends 'apache2'
 
 supports 'ubuntu'
+supports 'debian'

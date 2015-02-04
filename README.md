@@ -9,6 +9,7 @@ Requirements
 
 #### Platform
 - `Ubuntu 12.04`
+- `Debian 7.6`
 
 #### Cookbooks
 - `apache2` - https://github.com/opscode-cookbooks/apache2.git
