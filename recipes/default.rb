@@ -51,7 +51,7 @@ cookbook_file '/etc/init.d/gruyere' do
   mode '0755'
 end
 
-execute 'update-rc.d gruyere defaults' do
+execute 'update-rc.d gruyere defaults'
 
 service 'gruyere' do
   action :start
