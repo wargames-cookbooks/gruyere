@@ -9,4 +9,5 @@ group :integration do
   gem 'rubocop'
   gem 'chefspec'
   gem 'test-kitchen'
+  gem 'kitchen-vagrant'
 end

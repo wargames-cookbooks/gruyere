@@ -8,7 +8,6 @@ Requirements
 ------------
 
 #### Platform
-- `Ubuntu 10.04`
 - `Ubuntu 12.04`
 
 #### Cookbooks

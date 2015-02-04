@@ -4,19 +4,14 @@ driver_config:
   require_chef_omnibus: true
 
 platforms:
-- name: ubuntu-10.04
-  driver_config:
-    box: opscode-ubuntu-10.04
-    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-10.04_provisionerless.box
 - name: ubuntu-12.04
-  driver_config:
-    box: opscode-ubuntu-12.04
-    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
+  run_list:
+  - recipe[apt]
 
 suites:
-- name: "default"
+- name: gruyere
   run_list:
-    - recipe[gruyere]
-- name: "a2proxy"
+  - recipe[gruyere]
+- name: with-proxy
   run_list:
-    - recipe[gruyere::apache2_proxy]
+  - recipe[gruyere::apache2_proxy]

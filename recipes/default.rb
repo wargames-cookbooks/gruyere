@@ -20,53 +20,38 @@
 gruyere_dl_url = 'http://google-gruyere.appspot.com/gruyere-code.zip'
 gruyere_local = "#{Chef::Config[:file_cache_path]}/gruyere.zip"
 
-# Install the unzip package
-package 'unzip' do
-  action :install
-end
+package 'unzip'
 
 remote_file gruyere_local do
   source gruyere_dl_url
-  mode '0644'
 end
 
 directory node['gruyere']['path'] do
-  owner 'root'
-  group 'root'
-  mode '0755'
-  action :create
   recursive true
 end
 
 execute 'unzip-gruyere' do
   cwd node['gruyere']['path']
-  command "unzip #{gruyere_local}"
+  command "unzip -u #{gruyere_local}"
 end
 
-# Do some changes
-execute 'chmod executable' do
+execute 'chmod-executable' do
   cwd node['gruyere']['path']
   command 'chmod u+x gruyere.py'
 end
 
-execute 'change python binary' do
+execute 'fix-shebang' do
   cwd node['gruyere']['path']
   command 'sed -i "1 s/^.*$/#!\\/usr\\/bin\\/env python/g" gruyere.py'
 end
 
-# Create service
+# TODO: Use template to avoid hardcoding!
 cookbook_file '/etc/init.d/gruyere' do
   source 'gruyere_service'
-  cookbook 'gruyere'
+  mode '0755'
 end
 
-execute 'chmod service' do
-  command 'chmod +x /etc/init.d/gruyere'
-end
-
-execute 'update service' do
-  command 'update-rc.d gruyere defaults'
-end
+execute 'update-rc.d gruyere defaults' do
 
 service 'gruyere' do
   action :start
