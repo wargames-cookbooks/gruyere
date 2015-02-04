@@ -34,5 +34,5 @@ describe port 8008 do
 end
 
 describe command('wget -O - http://127.0.0.1:8008') do
-  its(:stdout) { should match /Gruyere: Home/ }
+  its(:stdout) { should match(/Gruyere: Home/) }
 end

@@ -18,5 +18,5 @@ describe port 80 do
 end
 
 describe command('wget -O - http://127.0.0.1') do
-  its(:stdout) { should match /Gruyere: Home/ }
+  its(:stdout) { should match(/Gruyere: Home/) }
 end
