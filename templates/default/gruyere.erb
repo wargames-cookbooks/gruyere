@@ -16,7 +16,7 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="Gruyere webapp"
 NAME=gruyere
-DAEMON=/opt/gruyere/gruyere.py
+DAEMON=<%= @path %>/gruyere.py
 DAEMON_ARGS=""
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME

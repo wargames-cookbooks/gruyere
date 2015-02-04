@@ -40,15 +40,15 @@ execute 'chmod-executable' do
   command 'chmod u+x gruyere.py'
 end
 
-execute 'fix-shebang' do
+execute 'fix-gruyere-shebang' do
   cwd node['gruyere']['path']
   command 'sed -i "1 s/^.*$/#!\\/usr\\/bin\\/env python/g" gruyere.py'
 end
 
-# TODO: Use template to avoid hardcoding!
-cookbook_file '/etc/init.d/gruyere' do
-  source 'gruyere_service'
+template '/etc/init.d/gruyere' do
+  source 'gruyere.erb'
   mode '0755'
+  variables path: node['gruyere']['path']
 end
 
 execute 'update-rc.d gruyere defaults'
