@@ -1,6 +1,8 @@
 AllCops:
   Include:
     - '**/Gemfile'
+    - Berksfile
+    - Rakefile
     - metadata.rb
     - attributes/**/*
     - definitions/**/*
@@ -13,6 +15,3 @@ AllCops:
   Exclude:
     - cookbooks/**/*
     - vendor/**/*
-
-Metrics/AbcSize:
-  Enabled: false

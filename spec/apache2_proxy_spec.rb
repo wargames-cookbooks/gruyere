@@ -15,7 +15,7 @@ describe 'gruyere::apache2_proxy' do
     stub_command('/usr/sbin/apache2 -t').and_return(true)
   end
 
-  it 'does include apache2 recipes for http proxy' do
+  it 'should include apache2 recipes for http proxy' do
     expect(subject).to include_recipe('apache2')
     expect(subject).to include_recipe('apache2::mod_proxy_http')
   end

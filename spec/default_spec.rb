@@ -9,36 +9,36 @@ describe 'gruyere::default' do
     end.converge(described_recipe)
   end
 
-  it 'does install unzip package' do
+  it 'should install unzip package' do
     expect(subject).to install_package('unzip')
   end
 
-  it 'does download gruyere source code' do
+  it 'should download gruyere source code' do
     expect(subject).to create_remote_file('/var/chef/cache/gruyere.zip')
   end
 
-  it 'does create gruyere directory' do
+  it 'should create gruyere directory' do
     expect(subject).to create_directory('/opt/gruyere-app')
       .with(recursive: true)
   end
 
-  it 'does unzip gruyere archive in created directory' do
+  it 'should unzip gruyere archive in created directory' do
     expect(subject).to run_execute('unzip-gruyere')
       .with(cwd: '/opt/gruyere-app',
             command: 'unzip -u /var/chef/cache/gruyere.zip')
   end
 
-  it 'does set correct perms for gruyere.py' do
+  it 'should set correct perms for gruyere.py' do
     expect(subject).to run_execute('chmod-executable')
       .with(cwd: '/opt/gruyere-app',
             command: 'chmod u+x gruyere.py')
   end
 
-  it 'does fix gruyere.py Shebang' do
+  it 'should fix gruyere.py Shebang' do
     expect(subject).to run_execute('fix-gruyere-shebang')
   end
 
-  it 'does create service from template' do
+  it 'should create service from template' do
     service = '/etc/init.d/gruyere'
     expect(subject).to create_template(service)
       .with(source: 'gruyere.erb',
@@ -47,11 +47,11 @@ describe 'gruyere::default' do
       %r{DAEMON=/opt/gruyere-app/gruyere.py})
   end
 
-  it 'does init gruyere service' do
+  it 'should init gruyere service' do
     expect(subject).to run_execute('update-rc.d gruyere defaults')
   end
 
-  it 'does start gruyere service' do
+  it 'should start gruyere service' do
     expect(subject).to start_service('gruyere')
   end
 end
