@@ -19,9 +19,9 @@ end
 
 describe file('/opt/gruyere/gruyere.py') do
   it { should be_file }
+  it { should be_executable }
   it { should be_owned_by 'root' }
   it { should be_grouped_into 'root' }
-  it { should be_mode 755 }
 end
 
 describe service('gruyere') do

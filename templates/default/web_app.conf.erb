@@ -1,17 +1,21 @@
 <VirtualHost *:80>
-     ServerName <%= @params[:server_name] %>
-     ServerAlias <% @params[:server_aliases].each do |a| %><%= a %> <% end %>
+    ServerName <%= @params[:server_name] %>
+    ServerAlias <% @params[:server_aliases].each do |a| %><%= a %> <% end %>
 
-     ProxyRequests off
-     ProxyPass / http://127.0.0.1:8008/
-     ProxyPassReverse / http://127.0.0.1:8008/
+    ProxyRequests off
+    ProxyPass / http://127.0.0.1:8008/
+    ProxyPassReverse / http://127.0.0.1:8008/
 
-     <Location />
-         Order allow,deny
-         Allow from all
-     </Location>
+    <Location />
+    <% if node['apache']['version'] == '2.4' -%>
+        Require all granted
+    <% else -%>
+        Order allow,deny
+        Allow from all
+    <% end -%>
+    </Location>
 
-     LogLevel info
-     ErrorLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-error.log
-     CustomLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-cess.log combined
+    LogLevel info
+    ErrorLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-error.log
+    CustomLog <%= node['apache']['log_dir'] %>/<%= @params[:name] %>-access.log combined
 </VirtualHost>

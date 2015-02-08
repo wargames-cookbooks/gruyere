@@ -9,6 +9,7 @@ Requirements
 
 #### Platform
 - `Ubuntu 12.04`
+- `Ubuntu 14.04`
 - `Debian 7.6`
 
 #### Cookbooks
