@@ -19,11 +19,42 @@ Attributes
 ----------
 
 #### gruyere::default
-* `['gruyere']['path']` - Path where application will be deployed
+<table>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+<tr>
+<td><tt>['gruyere']['path']</tt></td>
+<td>String</td>
+<td>Path where application will be deployed</td>
+<td><tt>/opt/gruyere</tt></td>
+</tr>
+</table>
 
 #### gruyere::apache2_proxy
-* `['gruyere']['apache2']['server_name']` - Apache2 server name
-* `['gruyere']['apache2']['server_aliases']` - Array of apache2 virtualhost aliases
+<table>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+<tr>
+<td><tt>['gruyere']['apache2']['server_name']</tt></td>
+<td>String</td>
+<td>Apache2 server name</td>
+<td><tt>gruyere</tt></td>
+</tr>
+<tr>
+<td><tt>['gruyere']['apache2']['server_aliases']</tt></td>
+<td>Array</td>
+<td>Array of apache2 virtualhost aliases</td>
+<td><tt>[gruyere]</tt></td>
+</tr>
+</table>
 
 Usage
 -----
