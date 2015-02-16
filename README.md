@@ -13,7 +13,7 @@ Requirements
 - `Debian 7.6`
 
 #### Cookbooks
-- `apache2` - https://github.com/opscode-cookbooks/apache2.git
+- `apache2` - https://supermarket.chef.io/cookbooks/apache2
 
 Attributes
 ----------
