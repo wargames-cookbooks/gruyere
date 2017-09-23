@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of gruyere.
 
+## 0.3.0:
+
+* Chef 13 compatibility
+* Use Cookstyle instead of rubocop
+* Set debian platform version to 8.7
+
 ## 0.2.0:
 
 * Chef 12 compatibility
