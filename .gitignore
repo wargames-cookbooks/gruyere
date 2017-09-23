@@ -5,3 +5,5 @@
 /cookbooks
 /Berksfile.lock
 /Gemfile.lock
+/.bundle
+/vendor
