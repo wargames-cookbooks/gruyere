@@ -7,12 +7,7 @@
     ProxyPassReverse / http://127.0.0.1:8008/
 
     <Location />
-    <% if node['apache']['version'] == '2.4' -%>
         Require all granted
-    <% else -%>
-        Order allow,deny
-        Allow from all
-    <% end -%>
     </Location>
 
     LogLevel info

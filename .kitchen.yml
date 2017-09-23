@@ -7,7 +7,7 @@ platforms:
 - name: ubuntu-14.04
   run_list:
   - recipe[apt]
-- name: debian-9.0
+- name: debian-8.7
   run_list:
   - recipe[apt]
 

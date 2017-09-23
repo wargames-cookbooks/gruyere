@@ -8,9 +8,8 @@ Requirements
 ------------
 
 #### Platform
-- `Ubuntu 12.04`
 - `Ubuntu 14.04`
-- `Debian 7.6`
+- `Debian 8.7`
 
 #### Cookbooks
 - `apache2` - https://supermarket.chef.io/cookbooks/apache2
@@ -19,42 +18,15 @@ Attributes
 ----------
 
 #### gruyere::default
-<table>
-<tr>
-<th>Key</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-<tr>
-<td><tt>['gruyere']['path']</tt></td>
-<td>String</td>
-<td>Path where application will be deployed</td>
-<td><tt>/opt/gruyere</tt></td>
-</tr>
-</table>
+| Key                               | Type   |  Description                                      |
+| ----------------- | ------ | ----------------------------------------------------------------- |
+| `[gruyere][path]` | String | Path where application will be deployed (default: `/opt/gruyere`) |
 
 #### gruyere::apache2_proxy
-<table>
-<tr>
-<th>Key</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-<tr>
-<td><tt>['gruyere']['apache2']['server_name']</tt></td>
-<td>String</td>
-<td>Apache2 server name</td>
-<td><tt>gruyere</tt></td>
-</tr>
-<tr>
-<td><tt>['gruyere']['apache2']['server_aliases']</tt></td>
-<td>Array</td>
-<td>Array of apache2 virtualhost aliases</td>
-<td><tt>[gruyere]</tt></td>
-</tr>
-</table>
+| Key                                  | Type   |  Description                                                 |
+| ------------------------------------ | ------- | ----------------------------------------------------------- |
+| `[gruyere][apache2][server_name]`    | String  | Apache2 server name (default: `gruyere`)                    |
+| `[gruyere][apache2][server_aliases]` | Array   | Array of apache2 virtualhost aliases (default: `[gruyere]`) |
 
 Usage
 -----
