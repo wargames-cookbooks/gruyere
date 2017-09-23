@@ -4,8 +4,10 @@ require 'spec_helper'
 
 describe 'gruyere::default' do
   let(:subject) do
-    ChefSpec::SoloRunner.new(file_cache_path: '/var/chef/cache') do |node|
-      node.set['gruyere']['path'] = '/opt/gruyere-app'
+    ChefSpec::SoloRunner.new(file_cache_path: '/var/chef/cache',
+                             platform: 'debian',
+                             version: '9.0') do |node|
+      node.override['gruyere']['path'] = '/opt/gruyere-app'
     end.converge(described_recipe)
   end
 
