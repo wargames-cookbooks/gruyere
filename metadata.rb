@@ -25,7 +25,7 @@ version '0.3.0'
 recipe 'default', 'Installs/configures gruyere'
 recipe 'apache2_proxy', 'Setup apache2 proxy vhost'
 
-depends 'apache2'
+depends 'apache2', '<= 5.2.1'
 
 supports 'ubuntu'
 supports 'debian'
