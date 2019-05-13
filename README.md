@@ -9,7 +9,7 @@ Requirements
 
 #### Platform
 - `Ubuntu 14.04`
-- `Debian 8.7`
+- `Debian 9.0`
 
 #### Cookbooks
 - `apache2` - https://supermarket.chef.io/cookbooks/apache2
