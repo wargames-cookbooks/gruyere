@@ -6,7 +6,7 @@ describe 'gruyere::apache2_proxy' do
   let(:subject) do
     ChefSpec::SoloRunner.new(file_cache_path: '/var/chef/cache',
                              platform: 'debian',
-                             version: '9.0') do |node|
+                             version: '9.5') do |node|
       node.override['gruyere']['path'] = '/opt/gruyere-app'
       node.override['gruyere']['apache2']['server_name']    = 'gruyere-app'
       node.override['gruyere']['apache2']['server_aliases'] = ['gruyere-app2']
