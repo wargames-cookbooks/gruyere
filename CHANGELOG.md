@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of gruyere.
 
+## 0.4.0:
+
+* Pin apache2 cookbook version to 5.2.1
+* Support for debian 9
+* CI fixes
+
 ## 0.3.0:
 
 * Chef 13 compatibility
