@@ -18,19 +18,13 @@ maintainer 'Sliim'
 maintainer_email 'sliim@mailoo.org'
 license 'Apache-2.0'
 description 'Installs/Configures Gruyere application'
-long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-chef_version '>= 12.5' if respond_to?(:chef_version)
+chef_version '>= 12.5'
 version '0.3.0'
-
-recipe 'default', 'Installs/configures gruyere'
-recipe 'apache2_proxy', 'Setup apache2 proxy vhost'
 
 depends 'apache2', '<= 5.2.1'
 
 supports 'ubuntu'
 supports 'debian'
 
-source_url 'https://github.com/wargames-cookbooks/gruyere' if
-  respond_to?(:source_url)
-issues_url 'https://github.com/wargames-cookbooks/gruyere/issues' if
-  respond_to?(:issues_url)
+source_url 'https://github.com/wargames-cookbooks/gruyere'
+issues_url 'https://github.com/wargames-cookbooks/gruyere/issues'

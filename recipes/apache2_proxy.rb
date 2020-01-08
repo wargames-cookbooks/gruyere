@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Cookbook Name:: gruyere
+# Cookbook:: gruyere
 # Recipe:: apache2_proxy
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
