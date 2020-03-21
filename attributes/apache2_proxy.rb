@@ -16,5 +16,6 @@
 # limitations under the License.
 #
 
-default['gruyere']['apache2']['server_name']    = 'gruyere'
+default['gruyere']['apache2']['site_name'] = 'gruyere-proxy'
+default['gruyere']['apache2']['server_name'] = 'gruyere'
 default['gruyere']['apache2']['server_aliases'] = ['gruyere']

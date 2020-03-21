@@ -17,16 +17,40 @@
 #
 
 include_recipe 'gruyere::default'
-include_recipe 'apache2'
-include_recipe 'apache2::mod_proxy_http'
 
-apache_site 'default' do
-  enable false
+sitename = node['gruyere']['apache2']['site_name']
+
+apache2_install sitename
+
+service 'apache2' do
+  extend Apache2::Cookbook::Helpers
+  service_name lazy { apache_platform_service_name }
+  supports restart: true, status: true, reload: true
+  action [:start, :enable]
 end
 
-web_app 'gruyere' do
-  cookbook 'gruyere'
-  enable true
-  server_name node['gruyere']['apache2']['server_name']
-  server_aliases node['gruyere']['apache2']['server_aliases']
+directory sitename do
+  extend Apache2::Cookbook::Helpers
+  path "#{default_docroot_dir}/#{sitename}"
+  recursive true
 end
+
+template sitename do
+  extend Apache2::Cookbook::Helpers
+  source 'site.conf.erb'
+  path "#{apache_dir}/sites-available/#{sitename}.conf"
+  variables(
+    server_name: node['gruyere']['apache2']['server_name'],
+    server_aliases: node['gruyere']['apache2']['server_aliases'],
+    log_dir: lazy { default_log_dir },
+    site_name: sitename
+  )
+end
+
+apache2_site sitename
+
+apache2_site '000-default' do
+  action :disable
+end
+
+apache2_module 'proxy'

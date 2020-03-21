@@ -21,7 +21,7 @@ description 'Installs/Configures Gruyere application'
 chef_version '>= 12.5'
 version '0.4.0'
 
-depends 'apache2', '<= 5.2.1'
+depends 'apache2'
 
 supports 'ubuntu'
 supports 'debian'

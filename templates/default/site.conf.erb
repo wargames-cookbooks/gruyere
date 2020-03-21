@@ -1,0 +1,16 @@
+<VirtualHost *:80>
+    ServerName <%= @server_name %>
+    ServerAlias <% @server_aliases.each do |a| %><%= a %> <% end %>
+
+    ProxyRequests off
+    ProxyPass / http://127.0.0.1:8008/
+    ProxyPassReverse / http://127.0.0.1:8008/
+
+    <Location />
+        Require all granted
+    </Location>
+
+    LogLevel info
+    ErrorLog <%= @log_dir %>/<%= @site_name %>-error.log
+    CustomLog <%= @log_dir %>/<%= @site_name %>-access.log combined
+</VirtualHost>
