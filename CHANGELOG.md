@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of gruyere.
 
+## 0.5.1:
+
+* gruyere::apache2_proxy: enable missing proxy_http module
+
 ## 0.5.0:
 
 * gruyere::apache2_proxy: updates for latest apache2 cookbook (8.1.0)
