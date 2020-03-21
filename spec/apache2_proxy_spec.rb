@@ -55,4 +55,8 @@ describe 'gruyere::apache2_proxy' do
   it 'enables apache2_module[proxy]' do
     expect(subject).to enable_apache2_module('proxy')
   end
+
+  it 'enables apache2_module[proxy_http]' do
+    expect(subject).to enable_apache2_module('proxy_http')
+  end
 end

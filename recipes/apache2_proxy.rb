@@ -54,3 +54,4 @@ apache2_site '000-default' do
 end
 
 apache2_module 'proxy'
+apache2_module 'proxy_http'
